@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Dart & Flutter",
-            "program": "lib/Bolum1/02-Final_ve_Const.dart",
+            "program": "lib/Bolum2/03-Donguler_If_Else.dart",
             "request": "launch",
             "type": "dart"
         }
