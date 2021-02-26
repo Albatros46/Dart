@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Dart & Flutter",
-            "program": "lib/Bolum2/06-Operatorler.dart",
+            "program": "lib/Bolum3/09-Fonksiyonlar.dart",
             "request": "launch",
             "type": "dart"
         }
