@@ -1,0 +1,20 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Product
+<div class="card">
+    <img class="card-img-top" src="https://mobile.1und1.de/static/38c/e3e142adda5dfc029ba0d25b6529a/webapp/1a321f7fdf8df7d70296b4a0496c0254-iphone11-couple-black.png">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.Description</p>
+        <a href="" class="btn btn-primary">Incele</a>
+    </div>
+    <ul>
+        <li>@Model.Id</li>
+        <li>@Model.Name</li>
+        <li>@Model.Price</li>
+        <li>@Model.Description</li>
+    </ul>
+</div>

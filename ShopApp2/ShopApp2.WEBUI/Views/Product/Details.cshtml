@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ShopApp2.WEBUI.Models.Product
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Product</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Product-> Details</h2>
+        <div style="align-content: center;">
+            <table style="width:60%">
+                <thead style="text-align: center;">
+                    <tr>
+                        <td>ID</td>
+                        <td>ÜRÜN ADI</td>
+                        <td>FIYATI</td>
+                        <td>HAKKINDA</td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Price TL</td>
+                    <td>@Model.Description</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

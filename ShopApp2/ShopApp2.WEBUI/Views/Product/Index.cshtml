@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Product</title>
+    </head>
+    <body>
+        <h2>Product->Index</h2>
+        <h3>@ViewData["Category"]</h3>
+        <!--ViewData Kullanim Sekli-->
+        <h1>ViewData kullanim sekli</h1>
+        <h3>@(((Product)ViewData["Product"]).Id)</h3>
+        <h3>@(((Product)ViewData["Product"]).Name)</h3>
+        <h3>@(((Product)ViewData["Product"]).Price)</h3>
+        <h3>@(((Product)ViewData["Product"]).Description)</h3>
+        <p> ((ShopApp.WEBUI.Models.Product)ViewData["Product"])</p>
+        <p>
+            Bu sekilde kullnirsak sadece burda kullaniriz fakat butun view lerde kullanilmasini istiyorsak
+            _ViewImports.cshtml sayfasi olustururuz.
+        </p>
+        <!--Bu sekilde kullnirsak sadece burda kullaniriz fakat butun view lerde kullanilmasini istiyorsak
+        _ViewImports.cshtml sayfasi olustururuz.-->
+        <!--ViewBag Kullanim sekli-->
+        <h1>Viewbag kullanim sekli</h1>
+        <h3>@(((Product)ViewBag.Pr).Id)</h3>
+        <h3>@(((Product)ViewBag.Pr).Name)</h3>
+        <h3>@(((Product)ViewBag.Pr).Price)</h3>
+        <h3>@(((Product)ViewBag.Pr).Description)</h3>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ShopApp2.WEBUI.ViewModels.ProductViewModel
+<!--Modeli tanimlarken artik list olarak tanimlamaliyiz
+    model List<Product>
+-->
+@{
+    var populerClass = Model.Products.Count > 2 ? "populer" : "";
+    var products = Model.Products;
+    var category = Model.Category;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Product</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            .populer {
+                color: green;
+                font-weight: 700;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Product-> List</h2>
+        <h3 class="@populerClass">@category.Name</h3>
+        <h3>@category.Description</h3>
+        <div style="align-content: center;">
+            <table style="width:60%">
+                <thead style="text-align: center;">
+                    <tr>
+                        <td>ID</td>
+                        <td>NAME</td>
+                        <td>PRICE</td>
+                        <td>DESCRPTION</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.Products[0].Id</td>
+                        <td>@Model.Products[0].Name</td>
+                        <td>@Model.Products[0].Price</td>
+                        <td>@Model.Products[0].Description</td>
+                    </tr>
+                    <tr>
+                        <td>@Model.Products[1].Id</td>
+                        <td>@Model.Products[1].Name</td>
+                        <td>@Model.Products[1].Price</td>
+                        <td>@Model.Products[1].Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        @*Tablo icerigi veritabanindan alinip 300, 500 veya daha fazla satir olusan listeler
+            icin Razor page özelligi kullanilarak foreach dongusu kullanacagiz.*@
+        <p>
+            Tablo icerigi veritabanindan alinip 300, 500 veya daha fazla satir olusan listeler
+            icin Razor page özelligi kullanilarak foreach dongusu kullanacagiz.
+        </p>
+        <div style="align-content: center;">
+            @if (products.Count == 0)
+            {
+                //Urun Yok
+            }
+            else
+            {
+
+            }
+            <table style="width:60%">
+                <thead style="text-align: center;">
+                    <tr>
+                        <td>ID</td>
+                        <td>NAME</td>
+                        <td>PRICE</td>
+                        <td>DESCRPTION</td>
+                        <td>DURUMU</td>
+                    </tr>
+                </thead>
+                @if (products.Count == 0)
+                {
+                    //Urun Yok
+                    <tr>
+                        <td>Urun Yok</td>
+                        <td>Urun Yok</td>
+                        <td>Urun Yok</td>
+                        <td>Urun Yok</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var product in products)
+                    {
+                        @if (product.isApproved)
+                        {
+                            <tr style="background-color: gray;">
+                                <td>@product.Id</td>
+                                <td>@product.Name</td>
+                                <td>@product.Price</td>
+                                <td>@product.Description</td>
+                                <td>@product.isApproved Ürün Satista</td>
+                            </tr>
+
+                        }
+                        else
+                        {
+                            <tr style="background-color: red;">
+                                <td>@product.Id</td>
+                                <td>@product.Name</td>
+                                <td>@product.Price</td>
+                                <td>@product.Description</td>
+                                <td>@product.isApproved Satist YOK</td>
+                            </tr>
+                        }
+
+                    }
+                }
+
+            </table>
+        </div>
+    </body>
+</html>
