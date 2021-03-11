@@ -7,7 +7,7 @@
 
         {
             "name": "Dart & Flutter",
-            "program": "lib/Bolum3/16-Map_Yapisi.dart",
+            "program": "lib/Bolum6/29-List_Gen_Map.dart",
             "request": "launch",
             "type": "dart"
         }
